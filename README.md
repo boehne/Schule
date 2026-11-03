@@ -1,0 +1,3 @@
+# Schule
+
+Mein Schulprojekt.
