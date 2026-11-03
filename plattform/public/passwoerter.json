@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "title": "Sicherer Umgang mit Passwörtern",
+  "description": "Digitale Sicherheit im Berufsalltag · ca. 20 Minuten · Für alle Ausbildungsberufe",
+  "blocks": [
+    {
+      "id": "einstieg",
+      "type": "text",
+      "content": "Ein Passwort ist wie der Schlüssel zu deinem digitalen Arbeitsplatz. In dieser Einheit lernst du, sichere Zugänge zu erstellen, typische Risiken zu erkennen und bei einem Verdacht richtig zu handeln.\n\nLernziele: Du kannst lange, einzigartige Passwörter begründen, einen Passwortmanager und Mehrfaktor-Authentifizierung einordnen und einen Vorfall im Betrieb melden. Verwende in den Aufgaben niemals echte Zugangsdaten."
+    },
+    {
+      "id": "wissen",
+      "type": "text",
+      "content": "Länge und Einzigartigkeit zählen\n\nVerwende für jeden Dienst ein eigenes, langes Passwort. Ein Passwortmanager kann zufällige Passwörter erzeugen und speichern. Für ein selbst gemerktes Hauptpasswort eignet sich eine lange Folge zufällig gewählter Wörter. Namen, Geburtsdaten und bekannte Zitate sind leicht zu erraten. Halte dich zusätzlich an die Vorgaben deines Betriebs.\n\nAktiviere Mehrfaktor-Authentifizierung (MFA), möglichst mit Sicherheitsschlüssel oder Authenticator-App. Gib weder Passwörter noch Bestätigungscodes weiter. Bei einem Datenleck: betroffenes Passwort ändern, wiederverwendete Passwörter ersetzen und die zuständige IT informieren."
+    },
+    {
+      "id": "single1",
+      "type": "single",
+      "question": "Du richtest einen neuen Zugang zum Warenwirtschaftssystem ein. Was ist die beste Wahl?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Das Passwort meines privaten E-Mail-Kontos wiederverwenden.",
+          "correct": false
+        },
+        {
+          "id": "b",
+          "text": "Ein langes, zufälliges und nur für diesen Dienst verwendetes Passwort aus dem Passwortmanager.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Den Firmennamen mit dem aktuellen Jahr kombinieren.",
+          "correct": false
+        }
+      ],
+      "explanation": "Ein einzigartiges, langes Passwort schützt andere Konten mit, wenn ein Dienst kompromittiert wird. Persönliche oder vorhersehbare Angaben sind ungeeignet."
+    },
+    {
+      "id": "multiple1",
+      "type": "multiple",
+      "question": "Welche Maßnahmen schützen deine beruflichen Konten? Wähle alle zutreffenden Antworten.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mehrfaktor-Authentifizierung aktivieren.",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "text": "Passwörter über einen freigegebenen Passwortmanager verwalten.",
+          "correct": true
+        },
+        {
+          "id": "c",
+          "text": "Bestätigungscodes auf telefonische Nachfrage weitergeben.",
+          "correct": false
+        },
+        {
+          "id": "d",
+          "text": "Für jeden Dienst ein eigenes Passwort verwenden.",
+          "correct": true
+        }
+      ],
+      "explanation": "MFA, ein betrieblich freigegebener Passwortmanager und einzigartige Passwörter ergänzen sich. Auch angeblicher IT-Support darf keine Bestätigungscodes erhalten."
+    },
+    {
+      "id": "transfer",
+      "type": "free",
+      "question": "Eine Kollegin schickt dir einen Link und bittet dich, dort dein Passwort und einen MFA-Code zur „Kontoprüfung“ einzugeben. Wie gehst du vor? Beschreibe drei Schritte.",
+      "solution": "1. Link nicht öffnen und keine Zugangsdaten oder Codes eingeben.\n2. Die Anfrage über einen bekannten, unabhängigen Kontaktweg prüfen und an die zuständige IT melden.\n3. Falls bereits Daten eingegeben wurden: sofort die IT über den vorgesehenen Meldeweg informieren, das Passwort über die echte Dienstadresse ändern und weitere Maßnahmen der IT befolgen (z. B. Sitzungen beenden)."
+    },
+    {
+      "id": "abschluss",
+      "type": "text",
+      "content": "Dein Sicherheitscheck für den Alltag\n\nFür jeden Dienst ein eigenes, langes Passwort. Passwortmanager nach betrieblichen Vorgaben nutzen. MFA einschalten. Keine Passwörter und Codes teilen. Verdächtige Anfragen melden.\n\nTransfer: Überlege ohne Zugangsdaten zu nennen, bei welchem beruflichen Dienst du diese Maßnahmen prüfen kannst. Besprecht offene Fragen gemeinsam in der Klasse."
+    }
+  ]
+}
