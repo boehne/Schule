@@ -103,16 +103,21 @@ export function Student({ unit }: { unit: Unit }) {
                     large
                     label="Deine Antwort"
                     value={written[b.id] || ""}
-                    onChange={(s) => setWritten({ ...written, [b.id]: s })}
+                    onChange={(s) => {
+                      setWritten({ ...written, [b.id]: s });
+                      if (!s.trim()) setShown({ ...shown, [b.id]: false });
+                    }}
                   />
+                  <p className="hint">Schreibe zuerst deine eigene Antwort. Danach kannst du die Musterlösung vergleichen.</p>
                   <button
+                    disabled={!written[b.id]?.trim()}
                     onClick={() => setShown({ ...shown, [b.id]: !shown[b.id] })}
                   >
                     {shown[b.id]
                       ? "Musterlösung ausblenden"
                       : "Musterlösung anzeigen"}
                   </button>
-                  {shown[b.id] && (
+                  {shown[b.id] && written[b.id]?.trim() && (
                     <div className="feedback prose">{b.solution}</div>
                   )}
                 </>

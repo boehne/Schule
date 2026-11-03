@@ -94,10 +94,19 @@ function learnerRuntime(unit: Unit) {
         typeof answers[b.id] === "string" ? (answers[b.id] as string) : "";
       area.addEventListener("input", () => {
         answers[b.id] = area.value;
+        toggle.disabled = !area.value.trim();
+        if (toggle.disabled) {
+          solution.hidden = true;
+          toggle.textContent = "Musterlösung anzeigen";
+          toggle.setAttribute("aria-expanded", "false");
+        }
         save();
       });
       label.append(area);
       const toggle = node("button", "Musterlösung anzeigen");
+      toggle.disabled = !area.value.trim();
+      const hint = node("p", "Schreibe zuerst deine eigene Antwort. Danach kannst du die Musterlösung vergleichen.");
+      hint.className = "hint";
       const solution = node("div", b.solution);
       solution.className = "feedback prose";
       solution.hidden = true;
@@ -105,6 +114,7 @@ function learnerRuntime(unit: Unit) {
       toggle.setAttribute("aria-controls", solution.id);
       toggle.setAttribute("aria-expanded", "false");
       toggle.addEventListener("click", () => {
+        if (!area.value.trim()) return;
         solution.hidden = !solution.hidden;
         toggle.textContent = solution.hidden
           ? "Musterlösung anzeigen"
@@ -113,11 +123,12 @@ function learnerRuntime(unit: Unit) {
       });
       controls.push(() => {
         area.value = "";
+        toggle.disabled = true;
         solution.hidden = true;
         toggle.textContent = "Musterlösung anzeigen";
         toggle.setAttribute("aria-expanded", "false");
       });
-      article.append(label, toggle, solution);
+      article.append(label, hint, toggle, solution);
     } else {
       const fieldset = node("fieldset");
       fieldset.append(

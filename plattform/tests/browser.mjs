@@ -51,6 +51,8 @@ assert.equal(
   await page.getByText("1. Link nicht öffnen", { exact: false }).count(),
   0,
 );
+await expect(page.getByRole("button", { name: "Musterlösung anzeigen" })).toBeDisabled();
+await page.getByLabel("Deine Antwort").fill("Meine eigene Antwort");
 await page.getByRole("button", { name: "Musterlösung anzeigen" }).click();
 assert.equal(
   await page.getByText("1. Link nicht öffnen", { exact: false }).count(),

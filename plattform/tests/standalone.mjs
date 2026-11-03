@@ -83,10 +83,18 @@ try {
     await expect(card(multi).getByRole("status")).toContainText("Richtig!");
   }
   if (free) {
+    await expect(card(free).getByRole("button")).toBeDisabled();
+    await card(free).locator("textarea").fill("   ");
+    await expect(card(free).getByRole("button")).toBeDisabled();
     await card(free).locator("textarea").fill("Mein lokaler Lernstand");
+    await expect(card(free).getByRole("button")).toBeEnabled();
     await expect(card(free).locator(".feedback")).toBeHidden();
     await card(free).getByRole("button").click();
     await expect(card(free).locator(".feedback")).toBeVisible();
+    await card(free).locator("textarea").fill("");
+    await expect(card(free).locator(".feedback")).toBeHidden();
+    await expect(card(free).getByRole("button")).toBeDisabled();
+    await card(free).locator("textarea").fill("Mein lokaler Lernstand");
   }
   const before = await p.locator("#progress-text").textContent();
   await p.reload();
