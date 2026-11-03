@@ -1,0 +1,161 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  color: #253b35;
+  background: #f5f8f4;
+  line-height: 1.7;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  padding: 20px max(20px, calc((100% - 850px) / 2));
+  background: #1b644b;
+  color: white;
+  font-size: 23px;
+  font-weight: 700;
+}
+header span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+}
+main {
+  max-width: 890px;
+  padding: 30px 20px 60px;
+  margin: auto;
+}
+h1 {
+  font-size: clamp(26px, 5vw, 38px);
+  line-height: 1.3;
+}
+h1,
+legend,
+label,
+.prose {
+  overflow-wrap: anywhere;
+}
+.description,
+.hint,
+#storage-status {
+  color: #526b5b;
+}
+.prose {
+  white-space: pre-wrap;
+}
+.card {
+  padding: 24px;
+  background: white;
+  border: 1px solid #dce5da;
+  border-radius: 12px;
+  margin: 22px 0;
+}
+.meta {
+  font-size: 12px;
+  color: #5c7860;
+}
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+legend {
+  font-size: 20px;
+  font-weight: 650;
+  max-width: 100%;
+  padding: 0;
+}
+label {
+  display: block;
+  font-weight: 600;
+}
+textarea {
+  display: block;
+  width: 100%;
+  margin: 14px 0;
+  padding: 14px;
+  font: inherit;
+  border: 1px solid #9aafa0;
+  border-radius: 7px;
+  resize: vertical;
+  color: inherit;
+  background: #fff;
+}
+.answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #dce5da;
+  border-radius: 7px;
+  padding: 14px;
+  margin: 12px 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+input {
+  margin-top: 7px;
+  flex-shrink: 0;
+  accent-color: #1b644b;
+  width: 18px;
+  height: 18px;
+}
+button {
+  font: inherit;
+  background: #1b644b;
+  color: white;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+button:hover {
+  background: #124c38;
+}
+:focus-visible {
+  outline: 3px solid #bc891b;
+  outline-offset: 4px;
+}
+.feedback {
+  padding: 16px;
+  background: #edf4e8;
+  border-radius: 7px;
+  margin-top: 16px;
+}
+.correct {
+  color: #205b37;
+}
+.retry {
+  background: #fff2d9;
+  color: #70531c;
+}
+progress {
+  width: 100%;
+  accent-color: #1b644b;
+}
+#progress-text {
+  margin-bottom: 0;
+}
+#storage-status {
+  font-size: 13px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 500px) {
+  main {
+    padding: 20px 14px;
+  }
+  .card {
+    padding: 18px;
+  }
+  legend {
+    font-size: 18px;
+  }
+}

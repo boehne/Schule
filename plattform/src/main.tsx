@@ -16,6 +16,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Block, Unit, createBlock, isCorrect, parseUnit } from "./model";
+import { createStandaloneHtml } from "./standalone";
 import example from "../public/passwoerter.json";
 import "./style.css";
 const KEY = "lernraum.unit.v1";
@@ -238,6 +239,24 @@ function App() {
       setNotice((e as Error).message);
     }
   }
+  function exportHtml() {
+    try {
+      const html = createStandaloneHtml(unit);
+      const url = URL.createObjectURL(
+        new Blob([html], { type: "text/html;charset=utf-8" }),
+      );
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "unterrichtseinheit.html";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setNotice(
+        "HTML-Datei exportiert. Sie kann direkt im Browser geöffnet und weitergegeben werden.",
+      );
+    } catch (e) {
+      setNotice((e as Error).message);
+    }
+  }
   async function importUnit(f: File) {
     try {
       if (f.size > 1000000)
@@ -301,6 +320,9 @@ function App() {
           <button className="side-button" onClick={exportUnit}>
             <Download size={18} />
             JSON exportieren
+          </button>
+          <button className="side-button" onClick={exportHtml}>
+            <Download size={18} /> HTML für Lernende exportieren
           </button>
           <input
             ref={file}

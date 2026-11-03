@@ -66,3 +66,17 @@ Lösungen sind Bestandteil der Einheit und im Browser bzw. Export einsehbar. Die
 ## Prüfung
 
 `npm test` prüft Beispiel-Roundtrip, Schemafehler, eindeutige IDs, Lösungskonfiguration, exakte Multiple-Choice-Auswertung, Textbehandlung und Größenlimit. Zusätzlich wurden die zentralen Bedienabläufe mit Chromium geprüft; siehe `TESTS.md`.
+
+## Eigenständige HTML-Datei für Lernende
+
+Einheit erstellen oder **JSON importieren**, dann **HTML für Lernende exportieren** wählen. Der Export prüft dasselbe Datenformat wie der JSON-Export. Die Datei `unterrichtseinheit.html` enthält alle Inhalte, Aufgaben, Musterlösungen, Styles und JavaScript; keine externen Abhängigkeiten werden geladen. Die exportierte Ansicht enthält keinen Editor. Bisherige Schülerantworten werden nicht mit exportiert.
+
+Die Datei über das Lernmanagementsystem, einen USB-Stick oder einen anderen schulischen Weg verteilen. Lernende können sie direkt per Doppelklick im aktuellen Browser öffnen – ohne Installation, Internet oder Entwicklungsserver. Auf Smartphones die heruntergeladene Datei im Browser öffnen. LMS-Dateivorschauen können JavaScript blockieren; dann die Datei herunterladen.
+
+Auswahlfragen geben sofort Feedback. Freitextlösungen erscheinen auf Wunsch. Antworten und daraus berechneter Fortschritt werden nur im lokalen Browser gespeichert. Fortschritt zählt bearbeitete Aufgaben, nicht richtige Lösungen. **Antworten und Fortschritt zurücksetzen** entfernt nach Bestätigung den Lernstand dieser Einheit und blendet Musterlösungen aus; andere Einheiten und der Editor bleiben erhalten.
+
+Speicherung ist an Browser und exakte Unterrichtsinhalte gebunden: Unveränderte Kopien derselben Einheit teilen auf demselben Ursprung den Lernstand; geänderte Inhalte beginnen neu. Bei `file://` ist dauerhafte Speicherung browserabhängig; Verschieben oder Umbenennen kann den Zugriff auf den alten Lernstand verändern. Private Fenster und das Löschen von Browserdaten können Antworten entfernen. Bei blockiertem oder vollem Speicher erscheint eine Meldung; die Aufgaben funktionieren für die laufende Sitzung weiter. Auf gemeinsam genutzten Geräten vor der Übergabe zurücksetzen. Lösungen sind im HTML-Quelltext einsehbar. Keine zentrale Übermittlung oder Synchronisierung.
+
+### Auf einem Webserver bereitstellen
+
+Die exportierte Datei unverändert in ein Verzeichnis eines statischen schulischen Webservers kopieren, z. B. als `pflegeassistenz.html`, und den HTTPS-Link verteilen. Weitere Dateien, Node.js oder ein Backend sind nicht nötig. Der Server muss HTML in UTF-8 ausliefern (`Content-Type: text/html; charset=utf-8`). JavaScript muss im Browser erlaubt sein. Strenge Content-Security-Policy-Einstellungen können eingebettete Skripte und Styles blockieren; die Hosting-Konfiguration muss die eingebetteten Inhalte zulassen. LMS können HTML nur als Download anbieten oder Skripte in Vorschauen unterdrücken: dann separat statisch hosten oder die heruntergeladene Datei im Browser öffnen. Auch beim Webserver bleiben Antworten nur auf dem jeweiligen Gerät und im jeweiligen Browser.
